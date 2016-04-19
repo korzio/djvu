@@ -2,6 +2,8 @@
 
 # djvu
 
+[![Join the chat at https://gitter.im/korzio/djvu](https://badges.gitter.im/korzio/djvu.svg)](https://gitter.im/korzio/djvu?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Utils for [DJV Dynamic Json Schema Validator](https://github.com/korzio/djv) - useful api to use json-schema and djv tool.
 This package is a clone of [jjv-utils](https://www.npmjs.com/package/jjv-utils). The difference is in using another core json schema validator. The version is synced with jjv-utils.
 The plan is to create common utils for json schema. So, in the future (> 1 year) this two packages will be replaced by general utils packages.
