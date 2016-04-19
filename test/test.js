@@ -2,12 +2,12 @@
 
 var expect = require('chai').expect;
 var mock = require('./../mock/common.json');
-var schema = require('./../index')(mock);
+var schema = require('../')(mock);
 
 var commonObj = { type: 'common' },
     unknownObj = { type: 'unknown' };
 
-describe('jjv-utils', function() {
+describe('djvu', function() {
     it('should generate api object', function() {
         expect(schema).to.be.a('object');
     });
@@ -23,7 +23,7 @@ describe('jjv-utils', function() {
             });
         });
 
-        it('is - works like jjv validate', function() {
+        it('is - works like djv validate', function() {
             expect(schema.is('test#/common', commonObj)).to.equal(true);
             expect(function(){
                 return schema.is('unknown', commonObj);

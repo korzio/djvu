@@ -1,32 +1,35 @@
 {
-  "name": "jjv-utils",
-  "version": "1.0.1",
-  "description": "Utils for jjv - useful api to use json-schema and jjv tool",
-  "main": "index.js",
+  "name": "djvu",
+  "version": "1.0.1-beta.0",
+  "description": "Utils for djv - useful api to use json-schema and djv tool",
+  "main": "djvu.js",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/korzio/jjv-utils.git"
+    "url": "git+https://github.com/korzio/djvu.git"
   },
   "keywords": [
-    "jjv",
+    "djv",
     "utils",
     "adapter",
-    "json-schema"
+    "json-schema",
+    "functional"
   ],
   "author": "“Alexandre <“korzio@gmail.com”>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/korzio/jjv-utils/issues"
+    "url": "https://github.com/korzio/djvu/issues"
   },
-  "homepage": "https://github.com/korzio/jjv-utils#readme",
+  "homepage": "https://github.com/korzio/djvu#readme",
   "dependencies": {
-    "jjv": "^1.0.2"
+    "djv": "^0.1.2"
   },
   "devDependencies": {
     "chai": "^3.3.0",
-    "mocha": "^2.3.3"
+    "mocha": "^2.3.3",
+    "webpack": "^1.12.14"
   }
 }

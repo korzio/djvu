@@ -1,0 +1,8 @@
+.travis.yml
+.vscode
+.npmignore
+webpack.config.js
+lib/
+mock/
+test/
+dist/

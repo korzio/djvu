@@ -1,10 +1,12 @@
-# jjv-utils
+# djvu
 
-Utils for [JJV JSON Validator](https://github.com/acornejo/jjv) - useful api to use json-schema and jjv tool.
+Utils for [DJV Dynamic Json Schema Validator](https://github.com/korzio/djv) - useful api to use json-schema and djv tool.
+This package is a clone of [jjv-utils](https://www.npmjs.com/package/jjv-utils). The difference is in using another core json schema validator. The version is synced with jjv-utils.
+The plan is to create common utils for json schema. So, in the future (> 1 year) this two packages will be replaced by general utils packages.
 
 ## Installation
 
-  `npm install jjv-utils`
+  `npm install djvu`
 
 ## Usage
 
@@ -26,9 +28,9 @@ jsonSchema = {
 };
 ```
 
-Utils will create an jjv env for further usage with a `test` (jsonSchema.name) namespace. If jsonSchema is not given as an argument - an envirionment will be created without any namespace.
+Utils will create an Djv env for further usage with a `test` (jsonSchema.name) namespace. If jsonSchema is not given as an argument - an envirionment will be created without any namespace.
 ```
-schema = require(pathToJjvUtils)(jsonSchema);
+schema = require(pathToDjvUtils)(jsonSchema);
 ```
 
 Use `add` to add json schema after initialization
@@ -36,7 +38,7 @@ Use `add` to add json schema after initialization
 schema.add('test1', jsonSchema);
 ```
 
-Use `is` to validate an object by schema reference, like jjv validate method
+Use `is` to validate an object by schema reference, like Djv validate method
 ```
 commonObj = { type: 'common' };
 schema.is('test#/common', commonObj) => true
@@ -62,11 +64,11 @@ schema.find(references, unknownObj) => undefined
 
 ## API
 
-- **add(String namespace, Object jsonSchema)** add schema to existing jjv environment
+- **add(String namespace, Object jsonSchema)** add schema to existing Djv environment
 - **is(String reference, Object data)** validate object by schema reference
 - **generate(String reference[, Boolean isReverse])** generates function to use in functional expressions
 - **find(Object/Array types, Object data)** iterates through an object or array to find appropriate schema to given object. Returns `undefined` if not found.
-- **env** original jjv-environment
+- **env** original Djv-environment
 
 ## Tests
 
@@ -74,7 +76,7 @@ schema.find(references, unknownObj) => undefined
 
 ## Resources
 
-- [JJV JSON Validator](https://github.com/acornejo/jjv)
-- [npm package](https://www.npmjs.com/package/jjv-utils)
-- [github source code](https://github.com/korzio/jjv-utils)
-- [How to Create and Publish Your First Node.js Module](https://medium.com/@jdaudier/how-to-create-and-publish-your-first-node-js-module-444e7585b738)
+- [DJV Dynamic Json Schema Validator](https://github.com/korzio/djv)
+- [npm package](https://www.npmjs.com/package/djvu)
+- [github source code](https://github.com/korzio/djvu)
+- [jjv-utils](https://www.npmjs.com/package/jjv-utils)
