@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/korzio/djvu.svg?branch=master)](https://travis-ci.org/korzio/djvu)
+
 # djvu
 
 Utils for [DJV Dynamic Json Schema Validator](https://github.com/korzio/djv) - useful api to use json-schema and djv tool.
