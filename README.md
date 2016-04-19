@@ -6,6 +6,10 @@ Utils for [DJV Dynamic Json Schema Validator](https://github.com/korzio/djv) - u
 This package is a clone of [jjv-utils](https://www.npmjs.com/package/jjv-utils). The difference is in using another core json schema validator. The version is synced with jjv-utils.
 The plan is to create common utils for json schema. So, in the future (> 1 year) this two packages will be replaced by general utils packages.
 
+## Contains
+
+The build package contains packed djv module inside.
+
 ## Installation
 
   `npm install djvu`
@@ -32,25 +36,25 @@ jsonSchema = {
 
 Utils will create an Djv env for further usage with a `test` (jsonSchema.name) namespace. If jsonSchema is not given as an argument - an envirionment will be created without any namespace.
 ```
-schema = require(pathToDjvUtils)(jsonSchema);
+djvuEnv = djvu(jsonSchema);
 ```
 
 Use `add` to add json schema after initialization
 ```
-schema.add('test1', jsonSchema);
+djvuEnv.add('test1', jsonSchema);
 ```
 
 Use `is` to validate an object by schema reference, like Djv validate method
 ```
 commonObj = { type: 'common' };
-schema.is('test#/common', commonObj) => true
+djvuEnv.is('test#/common', commonObj) => true
 ```
 Use `generate` to generate a function to compare conditions. Easy to use in `each`, `find` and other `lodash` iterable functions.
 ```
-var testCommon = schema.generate('test#/common');
+var testCommon = djvuEnv.generate('test#/common');
 [commonObj].map(testCommon) => [true]
 
-var testNotCommon = schema.generate('test#/common', true);
+var testNotCommon = djvuEnv.generate('test#/common', true);
 [commonObj].map(testNotCommon) => [false]
 ```
 
@@ -60,8 +64,8 @@ var references = {
     'test#/common': 1
 };
 
-schema.find(references, commonObj) => 1
-schema.find(references, unknownObj) => undefined
+djvuEnv.find(references, commonObj) => 1
+djvuEnv.find(references, unknownObj) => undefined
 ```
 
 ## API
