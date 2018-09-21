@@ -35,7 +35,7 @@ jsonSchema = {
 };
 ```
 
-Utils will create an Djv env for further usage with a `test` (jsonSchema.name) namespace. If jsonSchema is not given as an argument - an envirionment will be created without any namespace.
+Utils will create an Djv env for further usage with a `test` (jsonSchema.name) namespace. If jsonSchema is not given as an argument - an environment will be created without any namespace.
 ```
 djvuEnv = djvu(jsonSchema);
 ```
